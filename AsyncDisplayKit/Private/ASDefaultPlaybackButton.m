@@ -45,8 +45,8 @@
 
 + (void)drawRect:(CGRect)bounds withParameters:(id<NSObject>)parameters isCancelled:(asdisplaynode_iscancelled_block_t)isCancelledBlock isRasterizing:(BOOL)isRasterizing
 {
-  ASDefaultPlaybackButtonType buttonType = [parameters[@"buttonType"] intValue];
-  UIColor *color = parameters[@"color"];
+  ASDefaultPlaybackButtonType buttonType = [((NSDictionary*)parameters)[@"buttonType"] intValue];
+  UIColor *color = ((NSDictionary*)parameters)[@"color"];
 
   CGContextRef context = UIGraphicsGetCurrentContext();
   CGContextSaveGState(context);
